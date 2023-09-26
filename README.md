@@ -9,7 +9,7 @@
 6. framer-motion to make **beautiful Transitions** between pages.
 7. i18next, i18next-browser-languagedetector, i18next-http-backend, react-i18next and i18next-http-backend to make website multilingual.
 8. mdb-ui-kit for **flags** that appears when dealing with languages.
-9. sweetalert to display** beautiful alerts** for warning when deleting post or when there is a problem in authentication.
+9. sweetalert to display **beautiful alerts** for warning when deleting post or when there is a problem in authentication.
 10. react-toastify to display amazing toasts when signing up , logging in , adding post, editing post.
 11. react-select to display awesome select for Posts type.
 12. gh-pages to activate the **hosting** of github.
@@ -36,6 +36,6 @@
       - Website  uses the principle of **custom hooks** to shorten The code and make it more **efficient**.
       - Website was keen on beeing **friendly** with Search Engine Optimization (**SEO**).
       - Website uses **real authentication** and validating it from (SignUp , LogIn , ForgetPassword , Reset Password).
-      - demo of the site [Live Preview](https://crud-posts-three.vercel.app/).
+      - demo of the site [Live Preview](https://posts-crud-three.vercel.app/).
       - and here is the link of backend used in This Project [Backend-Repo](https://github.com/mohamedAbdelaleem/Notes).
     ## This is all I wanted to say thanks for reading.
