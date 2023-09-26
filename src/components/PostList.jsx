@@ -78,7 +78,7 @@ const PostList = () => {
         <td className="center-content text-center">
           <Link
             to={`post/${record.id}`}
-            title="details"
+            title={t("details")}
             style={{ fontSize: "16px" }}
           >
             {capitalizeFirstLetter(record?.title)?.substring(0, 10)}
