@@ -45,7 +45,9 @@ td.body-color {
 .select {
   color: black;
 }
-
+.css-13cymwt-control {
+  border-radius: 0 !important;
+}
 .count {
   text-align: center;
   font-weight: 700;
@@ -53,7 +55,7 @@ td.body-color {
 
 .center-content {
   position: relative;
-  top: 17%;
+  top: 16%;
 }
 
 .btn-group button {
@@ -75,9 +77,4 @@ td.body-color {
   .navigate-btns {
     margin-bottom: 6rem;
   }
-}
-
-.select-black .Select__control {
-  background-color: black;
-  color: white;
 }
