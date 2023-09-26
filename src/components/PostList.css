@@ -1,0 +1,83 @@
+th.body-color,
+td.body-color {
+  color: var(--body-color);
+  font-size: 20px;
+  text-align: center;
+}
+
+.navigate-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  direction: ltr;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+}
+
+.navigate-btn {
+  width: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.select {
+  color: black;
+}
+
+.count {
+  text-align: center;
+  font-weight: 700;
+}
+
+.center-content {
+  position: relative;
+  top: 16%;
+}
+
+.btn-group button {
+  font-size: 16px;
+  margin: 0 7px;
+}
+
+@media (max-width: 768px) {
+  .navigate-btn {
+    width: 30px;
+  }
+  .btn-group button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .navigate-btns {
+    margin-bottom: 6rem;
+  }
+}
+
+.select-black .Select__control {
+  background-color: black;
+  color: white;
+}
