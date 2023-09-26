@@ -64,11 +64,11 @@
   "other": "Other",
   "new-password": "New Password",
   "reset": "Reset",
-  "reset-success":"Password has been Reseted Successfully",
+  "reset-success": "Password has been Reseted Successfully",
   "select": "Select Post Type",
   "post-type": "This Post of Type",
   "all": "All",
-  "image-selected":"Select an Image for Your Post (Optional)",
-  "":"All",
-  "network-error":"Network Error"
+  "image-selected": "Select an Image for Your Post (Optional)",
+  "network-error": "Network Error",
+  "details": "Details"
 }
