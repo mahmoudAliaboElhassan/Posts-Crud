@@ -83,7 +83,6 @@ export const authSlice = createSlice({
         state.isLoggedIn = false;
         state.loading = true;
         localStorage.setItem("username", action.payload.username);
-        state.username = action.payload.username;
       })
       .addCase(Signup.rejected, (state, action) => {
         state.error = action.payload;
