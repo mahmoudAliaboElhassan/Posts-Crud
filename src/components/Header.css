@@ -6,9 +6,6 @@
 .navigate-link {
   color: var(--link-color);
   font-size: 22px;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
 }
 
 @media (max-width: 991px) {
@@ -83,6 +80,7 @@
   box-shadow: 0 0 3px 0px #958383;
   position: relative;
 }
+
 .logout-btn {
   border-radius: 16px;
   padding: 10px 15px;
