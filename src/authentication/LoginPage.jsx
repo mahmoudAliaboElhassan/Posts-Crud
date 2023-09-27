@@ -32,13 +32,14 @@ const LoginPage = () => {
 
   let errorMsg;
   const { error, loading } = useSelector((state) => state.auth);
-  if (
+  console.log(error);
+  if (error === "Network Error") {
+    errorMsg = t("network-error");
+  } else if (
     (error === "Request failed with status code 400" || error === null) &&
     !loading
   ) {
     errorMsg = t("login-error");
-  } else if (error === "Network Error") {
-    errorMsg = t("network-error");
   } else errorMsg = error;
 
   const form = (formikProps) => (
@@ -48,6 +49,7 @@ const LoginPage = () => {
           <Form.Label className="label-color" htmlFor="email-field">
             {t("email")}
           </Form.Label>
+          <ToastContainer />
           <Form.Control
             className="input-field"
             type="email"
@@ -96,7 +98,6 @@ const LoginPage = () => {
   );
   return (
     <Container>
-      <ToastContainer />
       <Col xs={{ span: 8, offset: 2 }}>
         <Formik
           initialValues={{
