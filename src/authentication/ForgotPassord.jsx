@@ -33,7 +33,8 @@ const ForgotPassword = () => {
       <Form.Group>
         <Form.Label className="label-color" htmlFor="email-field">
           {t("email")}
-        </Form.Label>
+        </Form.Label>{" "}
+        <ToastContainer />
         <Form.Control
           type="email"
           name="email"
@@ -61,7 +62,6 @@ const ForgotPassword = () => {
 
   return (
     <Container>
-      <ToastContainer />
       <Col xs={{ span: 8, offset: 2 }}>
         <Formik
           initialValues={{
