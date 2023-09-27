@@ -30,9 +30,7 @@ function ResetPassword() {
 
   let errorMsg;
   const { error, loading } = useSelector((state) => state.auth);
-  if (error === "Request failed with status code 400" && !loading) {
-    errorMsg = t("login-error");
-  } else if (error === "Network Error" || error === null) {
+  if (error === "Network Error") {
     errorMsg = t("network-error");
   } else errorMsg = error;
 
@@ -42,7 +40,8 @@ function ResetPassword() {
         <Form.Group className="mb-4">
           <Form.Label className="label-color" htmlFor="password-field">
             {t("new-password")}
-          </Form.Label>
+          </Form.Label>{" "}
+          <ToastContainer />
           <Form.Control
             className="input-field"
             type="password"
@@ -58,20 +57,20 @@ function ResetPassword() {
             {formikProps.errors.password}
           </Form.Control.Feedback>
         </Form.Group>
+        <div>
+          <Button type="submit" className="mt-2" disabled={loading}>
+            {loading ? t("loading") : t("reset")}
+          </Button>
 
-        <Button type="submit" className="mt-2" disabled={loading}>
-          {loading ? t("loading") : t("reset")}
-        </Button>
-
-        <div className="ms-1 me-1 mt-1">
-          <Link to={"/login"}> {t("back")}</Link>
+          <div className="ms-1 me-1 mt-1">
+            <Link to={"/login"}> {t("back")}</Link>
+          </div>
         </div>
       </Form>
     </Fragment>
   );
   return (
     <Container>
-      <ToastContainer />
       <Col xs={{ span: 8, offset: 2 }}>
         <Formik
           initialValues={{
@@ -99,7 +98,7 @@ function ResetPassword() {
                   theme,
                 });
                 setTimeout(() => {
-                  navigate("/");
+                  navigate("/login");
                 }, 1000);
               })
               .catch(() => {
