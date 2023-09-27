@@ -21,13 +21,10 @@ const SignUpPage = () => {
 
   let errorMsg;
   const errorHandle = () => {
-    if (
-      (error === "Request failed with status code 400" || error === null) &&
-      !loading
-    ) {
-      errorMsg = t("signup-error");
-    } else if (error === "Network Error") {
+    if (error === "Network Error") {
       errorMsg = t("network-error");
+    } else if (error === "Request failed with status code 400" && !loading) {
+      errorMsg = t("signup-error");
     } else errorMsg = error;
     swal({
       icon: "error",
@@ -38,12 +35,12 @@ const SignUpPage = () => {
 
   const form = (formikProps) => (
     <Fragment>
-      <ToastContainer />
       <Form onSubmit={formikProps.handleSubmit} className="form-style">
         <Form.Group className="mb-4">
           <Form.Label className="label-color" htmlFor="username-field">
             {t("username")}
           </Form.Label>
+          <ToastContainer />
           <Form.Control
             type="text"
             placeholder="Mahmoud Ali"
