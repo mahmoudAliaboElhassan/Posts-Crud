@@ -59,7 +59,7 @@ const Details = () => {
               <p>{post?.description}</p>
             </div>
             {post?.date && (
-              <div className="date-posted mt-3 mb-5">
+              <div className="date-posted mt-3 mb-8">
                 {t("date")} : {days[new Date(post.date).getDay()]}
                 {"   "}
                 {formatDate(post.date)}
