@@ -55,7 +55,7 @@ td.body-color {
 
 .center-content {
   position: relative;
-  line-height: 16vh;
+  top: 3vh;
 }
 
 .btn-group button {
