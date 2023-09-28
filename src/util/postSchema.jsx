@@ -5,10 +5,10 @@ export const postSchema = Yup.object().shape({
     .required("Title is required")
     .min(3, "Title is Very Short Insert at Least 3 characters")
     .max(30, "Maximum Number of characters is 30 characters")
-    .notOneOf([" "], "Input cannot be spaces only"),
+    .matches("^(?! *$).*$", "Title not be Spaces only"),
 
   description: Yup.string()
     .required("Description is required")
     .max(300, "Description is Very long Insert Maximum 300 characters")
-    .notOneOf([" "], "Input cannot be spaces only"),
+    .matches("^(?! *$).*$", "Description not be Spaces only"),
 });
