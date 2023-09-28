@@ -67,6 +67,12 @@ td.body-color {
   top: 3vh;
 }
 
+@media screen and (max-width: 767px) and (orientation: portrait) {
+  .center-content {
+    top: 4vh;
+  }
+}
+
 .btn-group button {
   font-size: 16px;
   margin: 0 7px;
