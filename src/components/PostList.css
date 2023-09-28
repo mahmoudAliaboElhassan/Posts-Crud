@@ -52,7 +52,15 @@ td.body-color {
   text-align: center;
   font-weight: 700;
 }
-
+.image {
+  width: 100%;
+  height: 11vh;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
 .center-content {
   position: relative;
   top: 3vh;
