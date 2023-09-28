@@ -85,11 +85,13 @@ const PostList = () => {
           </Link>
         </td>
         <td className="body-color">
-          <img
-            src={record.img}
-            style={{ width: "100%", height: "70px", fontSize: "14px" }}
-            alt={`img for ${record?.title?.substring(0, 10)}`}
-          />
+          <div className="image">
+            {" "}
+            <img
+              src={record.img}
+              alt={`img for ${record?.title?.substring(0, 10)}`}
+            />
+          </div>
         </td>
         <td className="center-content text-center">
           <ButtonGroup aria-label="Basic example">
