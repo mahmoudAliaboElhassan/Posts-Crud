@@ -85,7 +85,7 @@ const PostList = () => {
           </Link>
         </td>
         <td className="body-color">
-          <div className="image">
+          <div className="post-image">
             {" "}
             <img
               src={record.img}
