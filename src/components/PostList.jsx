@@ -96,9 +96,11 @@ const PostList = () => {
             <Link to={`post/${record.id}/edit`}>
               <Button variant="success">{t("edit")}</Button>
             </Link>
-            <Button variant="danger" onClick={() => handleDelete(record)}>
-              {t("delete")}
-            </Button>
+            <div>
+              <Button variant="danger" onClick={() => handleDelete(record)}>
+                {t("delete")}
+              </Button>
+            </div>
           </ButtonGroup>
         </td>
       </tr>
