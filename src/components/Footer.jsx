@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import "./Header.css";
 import "./Footer.css";
 import { ReactComponent as Heart } from "../assets/heart.svg";
