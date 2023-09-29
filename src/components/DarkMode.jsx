@@ -1,4 +1,3 @@
-import React from "react";
 import { ReactComponent as Sun } from "../assets/Sun.svg";
 import { ReactComponent as Moon } from "../assets/Moon.svg";
 import "./DarkMode.css";
