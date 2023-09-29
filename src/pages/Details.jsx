@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import UsePostDetails from "../hooks/use-post-details";
 import { useParams } from "react-router-dom";
