@@ -1,4 +1,3 @@
-import React from "react";
 import "./Loader.css";
 import { useTranslation } from "react-i18next";
 const Loader = () => {
