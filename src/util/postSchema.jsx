@@ -3,12 +3,18 @@ import * as Yup from "yup";
 export const postSchema = Yup.object().shape({
   title: Yup.string()
     .required("Title is required")
-    .min(3, "Title is Very Short Insert at Least 3 characters")
-    .max(30, "Maximum Number of characters is 30 characters")
-    .matches("^(?! *$).*$", "Title can not be Spaces only"),
+    .min(3, "Title should be at least 3 characters long")
+    .matches(
+      /^(\s*\S){3,}.*$/,
+      "Title should have at least 3 non-space characters"
+    ),
 
   description: Yup.string()
     .required("Description is required")
+    .min(3, "Description should be at least 3 characters long")
     .max(300, "Description is Very long Insert Maximum 300 characters")
-    .matches("^(?! *$).*$", "Description can not be Spaces only"),
+    .matches(
+      /^(\s*\S){3,}.*$/,
+      "Description should have at least 3 non-space characters"
+    ),
 });
