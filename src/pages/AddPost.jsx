@@ -122,9 +122,11 @@ const AddPost = () => {
             value={formik.values.title}
             isInvalid={!!formik.errors.title}
           />
-          <Form.Control.Feedback type="invalid">
-            {formik.errors.title}
-          </Form.Control.Feedback>
+          {formik.touched.title && (
+            <Form.Control.Feedback type="invalid">
+              {formik.errors.title}
+            </Form.Control.Feedback>
+          )}
         </Form.Group>
         <ToastContainer />
         <Form.Group className="mb-4">
@@ -141,9 +143,11 @@ const AddPost = () => {
             value={formik.values.description}
             isInvalid={!!formik.errors.description}
           />
-          <Form.Control.Feedback type="invalid">
-            {formik.errors.description}
-          </Form.Control.Feedback>
+          {formik.touched.description && (
+            <Form.Control.Feedback type="invalid">
+              {formik.errors.description}
+            </Form.Control.Feedback>
+          )}
         </Form.Group>
 
         <Loading loading={loading} error={error}>
