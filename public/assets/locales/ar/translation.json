@@ -72,5 +72,8 @@
   "network-error": "خطأ بالشبكة",
   "details": "تفاصيل",
   "person": "فلان الفلاني",
-  "password-here": "أدخل كلمة المرور هنا"
+  "password-here": "أدخل كلمة المرور هنا",
+  "email-required": "الأيميل مطلوب",
+  "password-required": "كلمةالمرور مطلوبة",
+  "show-password": "إعرض كلمة المرور"
 }
