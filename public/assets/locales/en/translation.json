@@ -72,5 +72,8 @@
   "network-error": "Network Error",
   "details": "Details",
   "person": "John Doe",
-  "password-here": "Enter Password Here"
+  "password-here": "Enter Password Here",
+  "email-required": "Email Field is required",
+  "password-required": "password is required",
+  "show-password": "Show Password"
 }
