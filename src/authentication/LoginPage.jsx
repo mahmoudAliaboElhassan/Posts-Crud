@@ -10,6 +10,7 @@ import swal from "sweetalert";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseTheme from "../hooks/use-theme";
+import { useState } from "react";
 
 const authSchema = Yup.object().shape({
   email: Yup.string().email().required("Email Field is required"),
@@ -18,7 +19,7 @@ const authSchema = Yup.object().shape({
     .matches(/^[a-zA-Z].*/, "Password must start with a character")
     .matches(
       /^(?=.*[a-zA-Z])(?=.*[0-9])/,
-      "Password must contain at least one letter and one number"
+      "Password must be of Chars and Numbers"
     )
     .min(10, "Minimum Number of Chars is 10"),
 });
@@ -28,6 +29,11 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { theme } = UseTheme();
+
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
   let errorMsg;
   const { error, loading } = useSelector((state) => state.auth);
@@ -104,13 +110,13 @@ const LoginPage = () => {
               </Form.Control.Feedback>
             )}
           </Form.Group>
-          <Form.Group className="mb-4">
+          <Form.Group className="mb-3">
             <Form.Label className="label-color" htmlFor="password-field">
               {t("password")}
             </Form.Label>
             <Form.Control
               className="input-field"
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder={t("password-here")}
               name="password"
               onChange={formik.handleChange}
@@ -120,10 +126,24 @@ const LoginPage = () => {
               id="password-field"
             />
             {formik.touched.password && (
-              <Form.Control.Feedback type="invalid">
+              <Form.Control.Feedback
+                type="invalid"
+                className="position-relative"
+              >
                 {formik.errors.password}
               </Form.Control.Feedback>
             )}
+          </Form.Group>
+          <Form.Group>
+            <input
+              type="checkbox"
+              className="password-toggle-btn"
+              onChange={togglePasswordVisibility}
+              id="show-password"
+            />
+            <Form.Label className="label-color" htmlFor="show-password">
+              {t("show-password")}
+            </Form.Label>
           </Form.Group>
           <button type="submit" class="my-2 btn btn-primary" disabled={loading}>
             {loading ? t("loading") : t("login")}
