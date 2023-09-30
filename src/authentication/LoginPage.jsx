@@ -45,9 +45,7 @@ const LoginPage = () => {
       email: "",
       password: "",
     },
-
     onSubmit: (values) => {
-      console.log(values.email);
       dispatch(
         Login({
           email: values.email,
