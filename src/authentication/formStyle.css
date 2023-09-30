@@ -18,3 +18,11 @@
     width: 70%;
   }
 }
+.password-toggle-btn {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  margin-left: 5px;
+  position: relative;
+  top: 4px;
+}
