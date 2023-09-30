@@ -96,9 +96,11 @@ const SignUpPage = () => {
               isInvalid={!!formik.errors.username}
               id="username-field"
             />
-            <Form.Control.Feedback type="invalid">
-              {formik.errors.username}
-            </Form.Control.Feedback>
+            {formik.touched.username && (
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.username}
+              </Form.Control.Feedback>
+            )}
           </Form.Group>
 
           <Form.Group className="mb-4">
@@ -115,9 +117,11 @@ const SignUpPage = () => {
               isInvalid={!!formik.errors.email}
               id="email-field"
             />
-            <Form.Control.Feedback type="invalid">
-              {formik.errors.email}
-            </Form.Control.Feedback>
+            {formik.touched.email && (
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.email}
+              </Form.Control.Feedback>
+            )}
           </Form.Group>
 
           <Form.Group className="mb-4">
@@ -134,9 +138,11 @@ const SignUpPage = () => {
               isInvalid={!!formik.errors.password}
               id="password-field"
             />
-            <Form.Control.Feedback type="invalid">
-              {formik.errors.password}
-            </Form.Control.Feedback>
+            {formik.touched.password && (
+              <Form.Control.Feedback type="invalid">
+                {formik.errors.password}
+              </Form.Control.Feedback>
+            )}
           </Form.Group>
 
           <button type="submit" class="my-2 btn btn-primary" disabled={loading}>
