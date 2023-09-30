@@ -109,7 +109,7 @@ const AddPost = () => {
             />
           </Form.Group>
         </div>
-        <Form.Group className="mb-4">
+        <Form.Group className="mb-3">
           <Form.Label className="label-color" htmlFor="title-field">
             {t("title")}
           </Form.Label>
@@ -123,13 +123,13 @@ const AddPost = () => {
             isInvalid={!!formik.errors.title}
           />
           {formik.touched.title && (
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback type="invalid" className="position-relative">
               {formik.errors.title}
             </Form.Control.Feedback>
           )}
         </Form.Group>
         <ToastContainer />
-        <Form.Group className="mb-4">
+        <Form.Group className="mb-3">
           <Form.Label className="label-color" htmlFor="password-field">
             {t("description")}
           </Form.Label>
@@ -144,7 +144,7 @@ const AddPost = () => {
             isInvalid={!!formik.errors.description}
           />
           {formik.touched.description && (
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback type="invalid" className="position-relative">
               {formik.errors.description}
             </Form.Control.Feedback>
           )}
