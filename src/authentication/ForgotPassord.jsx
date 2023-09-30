@@ -1,3 +1,4 @@
+import React from "react";
 import { Button, Container, Form, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
@@ -70,7 +71,7 @@ const ForgotPassword = () => {
     <Container>
       <Col xs={{ span: 8, offset: 2 }}>
         <Form onSubmit={formik.handleSubmit} className="form-style">
-          <Form.Group>
+          <Form.Group className="mb-3">
             <Form.Label className="label-color" htmlFor="email-field">
               {t("email")}
             </Form.Label>{" "}
@@ -85,12 +86,12 @@ const ForgotPassword = () => {
               value={formik.values.email}
               isInvalid={!!formik.errors.email}
             />
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback type="invalid" className="position-relative">
               {formik.errors.email}
             </Form.Control.Feedback>
           </Form.Group>
 
-          <Button type="submit" className="mt-3" disabled={loading}>
+          <Button type="submit" disabled={loading}>
             {loading ? t("loading") : t("send-password")}
           </Button>
 
