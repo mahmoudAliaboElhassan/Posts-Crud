@@ -82,7 +82,7 @@ const EditPost = () => {
           />
         </Form.Group>
       </div>
-      <Form.Group className="mb-4" controlId="exampleForm.ControlInput1">
+      <Form.Group className="mb-3">
         <Form.Label className="label-color">{t("title")}</Form.Label>
         <Form.Control
           type="text"
@@ -93,13 +93,13 @@ const EditPost = () => {
           isInvalid={!!formikProps.errors.title}
         />
         {formikProps.touched.title && (
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type="invalid" className="position-relative">
             {formikProps.errors.title}
           </Form.Control.Feedback>
         )}
       </Form.Group>
       <ToastContainer />
-      <Form.Group className="mb-4">
+      <Form.Group className="mb-3">
         <Form.Label className="label-color">{t("description")}</Form.Label>
         <Form.Control
           as="textarea"
@@ -111,7 +111,7 @@ const EditPost = () => {
           isInvalid={!!formikProps.errors.description}
         />
         {formikProps.touched.description && (
-          <Form.Control.Feedback type="invalid">
+          <Form.Control.Feedback type="invalid" className="position-relative">
             {formikProps.errors.description}
           </Form.Control.Feedback>
         )}
