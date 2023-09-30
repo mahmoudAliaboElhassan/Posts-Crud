@@ -10,14 +10,17 @@ import { Login, Signup } from "../RTK/Slices/authSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import UseTheme from "../hooks/use-theme";
-
+import { useState } from "react";
 const SignUpPage = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { theme } = UseTheme();
   const { error, loading } = useSelector((state) => state.auth);
-
+  const [showPassword, setShowPassword] = useState(false);
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
   let errorMsg;
   const errorHandle = () => {
     if (error === "Network Error" && !loading) {
@@ -124,12 +127,12 @@ const SignUpPage = () => {
             )}
           </Form.Group>
 
-          <Form.Group className="mb-4">
+          <Form.Group className="mb-3">
             <Form.Label className="label-color" htmlFor="password-field">
               {t("password")}
             </Form.Label>
             <Form.Control
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder={t("password-here")}
               name="password"
               onChange={formik.handleChange}
@@ -139,12 +142,25 @@ const SignUpPage = () => {
               id="password-field"
             />
             {formik.touched.password && (
-              <Form.Control.Feedback type="invalid">
+              <Form.Control.Feedback
+                type="invalid"
+                className="position-relative"
+              >
                 {formik.errors.password}
               </Form.Control.Feedback>
             )}
           </Form.Group>
-
+          <Form.Group>
+            <input
+              type="checkbox"
+              className="password-toggle-btn"
+              onChange={togglePasswordVisibility}
+              id="show-password"
+            />
+            <Form.Label className="label-color" htmlFor="show-password">
+              Show Password
+            </Form.Label>
+          </Form.Group>
           <button type="submit" class="my-2 btn btn-primary" disabled={loading}>
             {loading ? t("loading") : t("signup")}
           </button>
