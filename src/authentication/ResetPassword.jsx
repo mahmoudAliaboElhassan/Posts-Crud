@@ -75,7 +75,7 @@ function ResetPassword() {
     <Container>
       <Col xs={{ span: 8, offset: 2 }}>
         <Form onSubmit={formik.handleSubmit} className="form-style">
-          <Form.Group className="mb-4">
+          <Form.Group className="mb-3">
             <Form.Label className="label-color" htmlFor="password-field">
               {t("new-password")}
             </Form.Label>{" "}
@@ -91,12 +91,12 @@ function ResetPassword() {
               isInvalid={!!formik.errors.password}
               id="password-field"
             />
-            <Form.Control.Feedback type="invalid">
+            <Form.Control.Feedback type="invalid" className="position-relative">
               {formik.errors.password}
             </Form.Control.Feedback>
           </Form.Group>
           <div>
-            <Button type="submit" className="mt-2" disabled={loading}>
+            <Button type="submit" disabled={loading}>
               {loading ? t("loading") : t("reset")}
             </Button>
 
