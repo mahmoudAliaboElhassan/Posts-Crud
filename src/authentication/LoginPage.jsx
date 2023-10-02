@@ -86,7 +86,10 @@ const LoginPage = () => {
   });
   return (
     <div className="form-container">
-      <Form onSubmit={formik.handleSubmit} className="form-style">
+      <Form
+        onSubmit={formik.handleSubmit}
+        className="form-style form-style-auth"
+      >
         <Form.Group className="mb-4">
           <Form.Label className="label-color" htmlFor="email-field">
             {t("email")}
