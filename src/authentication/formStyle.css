@@ -26,11 +26,12 @@
 @media (orientation: landscape) and (max-width: 767px) {
   .form-container {
     height: calc(100vh - 40px);
+    margin-bottom: 3rem;
   }
 }
 @media (max-height: 400px) {
-  .form-style {
-    margin-top: 4rem;
+  .form-style-auth {
+    margin-top: 3rem;
   }
 }
 .password-toggle-btn {
