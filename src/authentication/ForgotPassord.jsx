@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Form, Col } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -68,39 +68,37 @@ const ForgotPassword = () => {
   });
 
   return (
-    <Container>
-      <Col xs={{ span: 8, offset: 2 }}>
-        <Form onSubmit={formik.handleSubmit} className="form-style">
-          <Form.Group className="mb-3">
-            <Form.Label className="label-color" htmlFor="email-field">
-              {t("email")}
-            </Form.Label>{" "}
-            <ToastContainer />
-            <Form.Control
-              type="email"
-              name="email"
-              id="email-field"
-              placeholder="name@example.com"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              isInvalid={!!formik.errors.email}
-            />
-            <Form.Control.Feedback type="invalid" className="position-relative">
-              {formik.errors.email}
-            </Form.Control.Feedback>
-          </Form.Group>
+    <div className="form-container">
+      <Form onSubmit={formik.handleSubmit} className="form-style">
+        <Form.Group className="mb-3">
+          <Form.Label className="label-color" htmlFor="email-field">
+            {t("email")}
+          </Form.Label>{" "}
+          <ToastContainer />
+          <Form.Control
+            type="email"
+            name="email"
+            id="email-field"
+            placeholder="name@example.com"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            isInvalid={!!formik.errors.email}
+          />
+          <Form.Control.Feedback type="invalid" className="position-relative">
+            {formik.errors.email}
+          </Form.Control.Feedback>
+        </Form.Group>
 
-          <Button type="submit" disabled={loading}>
-            {loading ? t("loading") : t("send-password")}
-          </Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? t("loading") : t("send-password")}
+        </Button>
 
-          <div className="ms-1 me-1 mt-1">
-            <Link to={"/login"}> {t("back")}</Link>
-          </div>
-        </Form>
-      </Col>
-    </Container>
+        <div className="ms-1 me-1 mt-1">
+          <Link to={"/login"}> {t("back")}</Link>
+        </div>
+      </Form>
+    </div>
   );
 };
 
