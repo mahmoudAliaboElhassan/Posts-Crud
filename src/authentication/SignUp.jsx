@@ -1,4 +1,4 @@
-import {  Form } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { authSchema } from "../util/authSchema";
@@ -81,7 +81,10 @@ const SignUpPage = () => {
   });
   return (
     <div className="form-container">
-      <Form onSubmit={formik.handleSubmit} className="form-style">
+      <Form
+        onSubmit={formik.handleSubmit}
+        className="form-style form-style-auth"
+      >
         <Form.Group className="mb-4">
           <Form.Label className="label-color" htmlFor="username-field">
             {t("username")}
