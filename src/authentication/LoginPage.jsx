@@ -1,4 +1,4 @@
-import { Container, Form, Col } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -85,78 +85,73 @@ const LoginPage = () => {
     validationSchema: authSchema,
   });
   return (
-    <Container>
-      <Col xs={{ span: 8, offset: 2 }}>
-        <Form onSubmit={formik.handleSubmit} className="form-style">
-          <Form.Group className="mb-4">
-            <Form.Label className="label-color" htmlFor="email-field">
-              {t("email")}
-            </Form.Label>
-            <ToastContainer />
-            <Form.Control
-              className="input-field"
-              type="email"
-              name="email"
-              placeholder="name@example.com"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              isInvalid={!!formik.errors.email}
-              id="email-field"
-            />
-            {formik.touched.email && (
-              <Form.Control.Feedback type="invalid">
-                {formik.errors.email}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          <Form.Group className="mb-3">
-            <Form.Label className="label-color" htmlFor="password-field">
-              {t("password")}
-            </Form.Label>
-            <Form.Control
-              className="input-field"
-              type={showPassword ? "text" : "password"}
-              placeholder={t("password-here")}
-              name="password"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-              isInvalid={!!formik.errors.password}
-              id="password-field"
-            />
-            {formik.touched.password && (
-              <Form.Control.Feedback
-                type="invalid"
-                className="position-relative"
-              >
-                {formik.errors.password}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          <Form.Group>
-            <input
-              type="checkbox"
-              className="password-toggle-btn"
-              onChange={togglePasswordVisibility}
-              id="show-password"
-            />
-            <Form.Label className="label-color" htmlFor="show-password">
-              {t("show-password")}
-            </Form.Label>
-          </Form.Group>
-          <button type="submit" class="my-2 btn btn-primary" disabled={loading}>
-            {loading ? t("loading") : t("login")}
-          </button>
-          <div>
-            {t("no-account")} <Link to={"/signup"}>{t("signup")}</Link>
-          </div>{" "}
-          <div>
-            <Link to={"/forgetpassword"}> {t("forget-password")} </Link>
-          </div>
-        </Form>
-      </Col>
-    </Container>
+    <div className="form-container">
+      <Form onSubmit={formik.handleSubmit} className="form-style">
+        <Form.Group className="mb-4">
+          <Form.Label className="label-color" htmlFor="email-field">
+            {t("email")}
+          </Form.Label>
+          <ToastContainer />
+          <Form.Control
+            className="input-field"
+            type="email"
+            name="email"
+            placeholder="name@example.com"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
+            isInvalid={!!formik.errors.email}
+            id="email-field"
+          />
+          {formik.touched.email && (
+            <Form.Control.Feedback type="invalid">
+              {formik.errors.email}
+            </Form.Control.Feedback>
+          )}
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label className="label-color" htmlFor="password-field">
+            {t("password")}
+          </Form.Label>
+          <Form.Control
+            className="input-field"
+            type={showPassword ? "text" : "password"}
+            placeholder={t("password-here")}
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            isInvalid={!!formik.errors.password}
+            id="password-field"
+          />
+          {formik.touched.password && (
+            <Form.Control.Feedback type="invalid" className="position-relative">
+              {formik.errors.password}
+            </Form.Control.Feedback>
+          )}
+        </Form.Group>
+        <Form.Group>
+          <input
+            type="checkbox"
+            className="password-toggle-btn"
+            onChange={togglePasswordVisibility}
+            id="show-password"
+          />
+          <Form.Label className="label-color" htmlFor="show-password">
+            {t("show-password")}
+          </Form.Label>
+        </Form.Group>
+        <button type="submit" class="my-2 btn btn-primary" disabled={loading}>
+          {loading ? t("loading") : t("login")}
+        </button>
+        <div>
+          {t("no-account")} <Link to={"/signup"}>{t("signup")}</Link>
+        </div>{" "}
+        <div>
+          <Link to={"/forgetpassword"}> {t("forget-password")} </Link>
+        </div>
+      </Form>
+    </div>
   );
 };
 
