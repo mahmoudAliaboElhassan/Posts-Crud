@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import { Button, Col, Container, Form, ToastContainer } from "react-bootstrap";
+import { Button, Form, ToastContainer } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import * as Yup from "yup";
@@ -72,41 +72,39 @@ function ResetPassword() {
     validationSchema: resetSchema,
   });
   return (
-    <Container>
-      <Col xs={{ span: 8, offset: 2 }}>
-        <Form onSubmit={formik.handleSubmit} className="form-style">
-          <Form.Group className="mb-3">
-            <Form.Label className="label-color" htmlFor="password-field">
-              {t("new-password")}
-            </Form.Label>{" "}
-            <ToastContainer />
-            <Form.Control
-              className="input-field"
-              type="password"
-              placeholder="Enter Password Here"
-              name="password"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-              isInvalid={!!formik.errors.password}
-              id="password-field"
-            />
-            <Form.Control.Feedback type="invalid" className="position-relative">
-              {formik.errors.password}
-            </Form.Control.Feedback>
-          </Form.Group>
-          <div>
-            <Button type="submit" disabled={loading}>
-              {loading ? t("loading") : t("reset")}
-            </Button>
+    <div className="form-container">
+      <Form onSubmit={formik.handleSubmit} className="form-style">
+        <Form.Group className="mb-3">
+          <Form.Label className="label-color" htmlFor="password-field">
+            {t("new-password")}
+          </Form.Label>{" "}
+          <ToastContainer />
+          <Form.Control
+            className="input-field"
+            type="password"
+            placeholder="Enter Password Here"
+            name="password"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.password}
+            isInvalid={!!formik.errors.password}
+            id="password-field"
+          />
+          <Form.Control.Feedback type="invalid" className="position-relative">
+            {formik.errors.password}
+          </Form.Control.Feedback>
+        </Form.Group>
+        <div>
+          <Button type="submit" disabled={loading}>
+            {loading ? t("loading") : t("reset")}
+          </Button>
 
-            <div className="ms-1 me-1 mt-1">
-              <Link to={"/login"}> {t("back")}</Link>
-            </div>
+          <div className="ms-1 me-1 mt-1">
+            <Link to={"/login"}> {t("back")}</Link>
           </div>
-        </Form>
-      </Col>
-    </Container>
+        </div>
+      </Form>
+    </div>
   );
 }
 
