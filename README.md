@@ -33,6 +33,7 @@
       - Footer  used **entity** to display copy rights icon and current year in footer is **dynamic** and is changed every year.
       - Website uses **navigation buttons** to navigate between pages to display posts.
       - Website uses select to **filter** posts with **localStorage**.
+      - Website uses **Optional Chaining** to Increase readability and simplify otherwise long logical conjunctions and complex-looking conditions.
       - Website  uses the principle of **custom hooks** to shorten The code and make it more **efficient**.
       - Website was keen on beeing **friendly** with Search Engine Optimization (**SEO**).
       - Website uses **real authentication** and validating it from (SignUp , LogIn , ForgetPassword , Reset Password).
