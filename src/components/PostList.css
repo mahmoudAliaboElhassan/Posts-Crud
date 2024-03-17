@@ -64,14 +64,15 @@ td.body-color {
 }
 .center-content {
   position: relative;
-  top: 3vh;
+/*   top: 3vh; */
+   vertical-align: middle;
 }
 
-@media (max-width: 767px) and (orientation: portrait) {
+/* @media (max-width: 767px) and (orientation: portrait) {
   .center-content {
     top: 5vh;
   }
-}
+} */
 
 .btn-group button {
   font-size: 16px;
