@@ -1,5 +1,10 @@
 
 # This Crud is for posts to handle Adding, Editing and Deleting posts
+
+###Video
+Uploading Posts-CRUD.mp4…
+
+
 ## This Crud was made by many **libraries**
 1. react-router-dom to serve the principle of **Single Page Application**.
 2. react-redux and redux toolkit to handle state management **globally**.
