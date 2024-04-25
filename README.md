@@ -1,8 +1,10 @@
 
 # This Crud is for posts to handle Adding, Editing and Deleting posts
 
-###Video
-Uploading Posts-CRUD.mp4…
+### Video
+
+
+https://github.com/mahmoudAliaboElhassan/Posts-Crud/assets/105460542/b2a56bad-9f94-4dae-928f-f5ea4664e660
 
 
 ## This Crud was made by many **libraries**
