@@ -81,7 +81,7 @@ const PostList = () => {
             title={t("details")}
             style={{ fontSize: "16px" }}
           >
-            {capitalizeFirstLetter(record?.title)?.substring(0, 10)}
+            {capitalizeFirstLetter(record?.title)}
           </Link>
         </td>
         <td className="body-color">
