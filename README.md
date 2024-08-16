@@ -1,7 +1,7 @@
 
 # This Crud is for posts to handle Adding, Editing and Deleting posts
 
-## _______________________________________How to use the Website________________________________________
+## _______________________________________How to use the Website_______________________________________
 
 
 https://github.com/mahmoudAliaboElhassan/Posts-Crud/assets/105460542/b2a56bad-9f94-4dae-928f-f5ea4664e660
